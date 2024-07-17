@@ -16,16 +16,16 @@ function wishMe() {
     var hour = day.getHours();
 
     if (hour >= 0 && hour < 12) {
-        speak("Good Morning Boss...");
+        speak("Selamat Pagi Boss...");
     } else if (hour >= 12 && hour < 17) {
-        speak("Good Afternoon Master...");
+        speak("Selamat Siang Kak...");
     } else {
-        speak("Good Evening Sir...");
+        speak("Selamat Malam Ang...");
     }
 }
 
 window.addEventListener('load', () => {
-    speak("Initializing JARVIS...");
+    speak("Initializing SARKEM...");
     wishMe();
 });
 
@@ -40,45 +40,45 @@ recognition.onresult = (event) => {
 };
 
 btn.addEventListener('click', () => {
-    content.textContent = "Listening...";
+    content.textContent = "Mendengarkan...";
     recognition.start();
 });
 
 function takeCommand(message) {
-    if (message.includes('hey') || message.includes('hello')) {
-        speak("Hello Sir, How May I Help You?");
-    } else if (message.includes("open google")) {
+    if (message.includes('woi') || message.includes('sarkem')) {
+        speak("Apa sira kuh, bocah kari ngomong bae butuh apa");
+    } else if (message.includes("buka google")) {
         window.open("https://google.com", "_blank");
-        speak("Opening Google...");
-    } else if (message.includes("open youtube")) {
+        speak("Kuh Google wis dibuka...");
+    } else if (message.includes("buka youtube")) {
         window.open("https://youtube.com", "_blank");
-        speak("Opening Youtube...");
-    } else if (message.includes("open facebook")) {
+        speak("Ceg luh Aja bae deuleng sing aneh...");
+    } else if (message.includes("buka facebook")) {
         window.open("https://facebook.com", "_blank");
-        speak("Opening Facebook...");
-    } else if (message.includes('what is') || message.includes('who is') || message.includes('what are')) {
+        speak("Srog masih usum kah Facebookan...");
+    } else if (message.includes('apa itu') || message.includes('siapa itu') || message.includes('apa yang')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what I found on the internet regarding " + message;
+        const finalText = "Wis aja protes adanya cuman kien " + message;
         speak(finalText);
     } else if (message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "").trim()}`, "_blank");
-        const finalText = "This is what I found on Wikipedia regarding " + message;
+        const finalText = "Aja luru sing laka, kien bae lih " + message;
         speak(finalText);
-    } else if (message.includes('time')) {
+    } else if (message.includes('jam pira')) {
         const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
-        const finalText = "The current time is " + time;
+        const finalText = "bocah buta, kien luh jam " + time;
         speak(finalText);
-    } else if (message.includes('date')) {
+    } else if (message.includes('tanggal pira')) {
         const date = new Date().toLocaleString(undefined, { month: "short", day: "numeric" });
-        const finalText = "Today's date is " + date;
+        const finalText = "bocah pikun, kien lih tanggal " + date;
         speak(finalText);
-    } else if (message.includes('calculator')) {
+    } else if (message.includes('kalkulator')) {
         window.open('Calculator:///');
-        const finalText = "Opening Calculator";
+        const finalText = "buka Calculator";
         speak(finalText);
     } else {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "I found some information for " + message + " on Google";
+        const finalText = "Aja kebanyakan treka, ketemunya cuman kien " + message + " ning Google";
         speak(finalText);
     }
 }
