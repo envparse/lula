@@ -46,19 +46,19 @@ btn.addEventListener('click', () => {
 
 function takeCommand(message) {
     if (message.includes('woi') || message.includes('sarkem')) {
-        speak("Apa sira kuh, bocah kari ngomong bae butuh apa");
+        speak("Apa sira kuh, bocah kari ngomong bae butuh apa mene bae ning kula aang sarkem haha");
     } else if (message.includes("buka google")) {
         window.open("https://google.com", "_blank");
-        speak("Kuh Google wis dibuka...");
+        speak("Kuh Google wis dibuka, pengen luru apa sirakuh...");
     } else if (message.includes("buka youtube")) {
         window.open("https://youtube.com", "_blank");
-        speak("Ceg luh Aja bae deuleng sing aneh...");
+        speak("Ceg luh Aja bae deuleng sing aneh-aneh ko tak wara ning mama sirah...");
     } else if (message.includes("buka facebook")) {
         window.open("https://facebook.com", "_blank");
-        speak("Srog masih usum kah Facebookan...");
+        speak("Srog ceg los, kaya masih usum bae kah Facebookan...");
     } else if (message.includes('apa itu') || message.includes('siapa itu') || message.includes('apa yang')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "Wis aja protes adanya cuman kien " + message;
+        const finalText = "Wis aja protes baka bli ngupai jajan kuh, adanya cuman kien bae " + message;
         speak(finalText);
     } else if (message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "").trim()}`, "_blank");
@@ -66,19 +66,19 @@ function takeCommand(message) {
         speak(finalText);
     } else if (message.includes('jam pira')) {
         const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
-        const finalText = "bocah buta, kien luh jam " + time;
+        const finalText = "bocah buta jam bae di takoni,kih rongokaken kien luh jam " + time;
         speak(finalText);
     } else if (message.includes('tanggal pira')) {
         const date = new Date().toLocaleString(undefined, { month: "short", day: "numeric" });
-        const finalText = "bocah pikun, kien lih tanggal " + date;
+        const finalText = "bocah pikun bli weru dina bli weru tanggal sirakuh, kih kien lih tanggal " + date;
         speak(finalText);
     } else if (message.includes('kalkulator')) {
         window.open('Calculator:///');
-        const finalText = "buka Calculator";
+        const finalText = "pengen ngitungi apa sira luru kalkulator, kelihatan kih bocah kakehan utang";
         speak(finalText);
     } else {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "Aja kebanyakan treka, ketemunya cuman kien " + message + " ning Google";
+        const finalText = "Aja kakean treka pekara kuh baka bli ngupai jajan ning senok, kih nemue cuman kien " + message + " ning Google le";
         speak(finalText);
     }
 }
